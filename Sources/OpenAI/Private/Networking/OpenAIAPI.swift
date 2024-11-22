@@ -211,7 +211,7 @@ extension OpenAIAPI: Endpoint {
       case .vectorStoreFileBatch(let category):
          switch category {
          case .create(let vectorStoreID): return"/v1/vector_stores/\(vectorStoreID)/file_batches"
-         case .retrieve(let vectorStoreID, let batchID): return "v1/vector_stores/\(vectorStoreID)/file_batches/\(batchID)"
+         case .retrieve(let vectorStoreID, let batchID): return "/v1/vector_stores/\(vectorStoreID)/file_batches/\(batchID)"
          case .cancel(let vectorStoreID, let batchID): return "/v1/vector_stores/\(vectorStoreID)/file_batches/\(batchID)/cancel"
          case .list(let vectorStoreID, let batchID): return "/v1/vector_stores/\(vectorStoreID)/file_batches/\(batchID)/files"
          }
